@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+      Scanner teclado = new Scanner(System.in);
+      
+      System.out.println("Digite o valor de A: ");
+      double A = teclado.nextDouble();
+      System.out.println("Difite o valor de B: ");
+      double B = teclado.nextDouble();
+      System.out.println("Digite o valor de C ");
+      double C = teclado.nextDouble();
+      System.out.println("Digite o valor de D ");
+      double D = teclado.nextDouble();
+      System.out.println("Digite o valor de E ");
+     double E = teclado.nextDouble();
+
+      double media = (A + B + C + D + E) / 5;
+      System.out.println( "A média é: " + media );
+      
+    teclado.close();
+    }  
+}
