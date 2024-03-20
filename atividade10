@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+       Scanner teclado = new Scanner(System.in);
+         System.out.println("Digite o valor de A: ");
+         int a = teclado.nextInt();
+      System.out.println("Digite o valor de B: ");
+         int b = teclado.nextInt();
+
+      
+      if (a <= b) {
+          for (int i = a; i <= b; i++) {
+              System.out.println(i);
+          }
+      } else {
+          for (int i = b; i <= a; i++) {
+              System.out.println(i);
+          }
+      }
+System.out.println("os numeros entre A e B sao: " + a + "e" + b);
+      
+    }
+}
