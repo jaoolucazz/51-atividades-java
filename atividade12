@@ -1,0 +1,16 @@
+import java.util.Scanner;
+public class Main {
+public static void main(String[] args) {
+Scanner teclado = new Scanner(System.in);
+         
+  System.out.println("Digite um numero  de 1 a 10: ");
+    int num1 = teclado.nextInt();
+
+  if (num1 >= 1 && num1 <= 10) {
+    System.out.println("Tabuada do " + num1 + ":");
+      for (int i = 1; i <= 10; i++) {
+        System.out.println(num1 + " x " + i + " = " + (num1 * i));
+   }
+  }
+ }
+}
