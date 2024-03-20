@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+       Scanner teclado = new Scanner(System.in);
+
+System.out.println("Digite a base: ");
+int base = teclado.nextInt();
+System.out.println("Digite a potencia: ");
+int potencia = teclado.nextInt();
+
+int resultado = calcularPotencia(base, potencia);
+  System.out.println(base + " elevado a " + potencia + " é igual a " + resultado);
+          }
+public static int calcularPotencia(int base, int expoente) {
+int resultado = 1;
+
+for (int i = 1; i <= expoente; i++) {
+  resultado *= base;
+   }
+return resultado;
+          }
+}
