@@ -1,0 +1,24 @@
+import java.util.Scanner;
+public class Main {
+public static void main(String[] args) {
+ Scanner teclado = new Scanner(System.in); 
+
+  System.out.println("Digite a população da cidade A: ");
+  int populacaoA = teclado.nextInt();
+  System.out.println("Digite a taxa de crescimento da cidade A: ");
+  double taxaCrescimentoA = teclado.nextDouble();
+  System.out.println("Digite a população da cidade B: ");
+  int populacaoB = teclado.nextInt();
+  System.out.println("Digite a taxa de crescimento da cidade B: ");
+  double taxaCrescimentoB = teclado.nextDouble();
+  
+  int anos = 0;
+
+  while (populacaoA <= populacaoB){
+    populacaoA+= (int) (populacaoA * taxaCrescimentoA);
+    populacaoB+= (int) (populacaoB * taxaCrescimentoB);
+      anos++;
+}
+ System.out.print("anos necessários para que a população do país A ultrapasse ou iguale a população do país B é de " + anos + " anos ");
+}
+}
