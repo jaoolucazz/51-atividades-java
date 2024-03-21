@@ -1,0 +1,38 @@
+import java.util.Scanner;
+public class Main {
+public static void main(String[] args) {
+Scanner teclado = new Scanner(System.in);
+char continuar = 's';
+      
+while (continuar == 's' || continuar == 'S'){ 
+System.out.print("Digite um número inteiro positivo: ");
+int numero = teclado.nextInt();
+
+if (numero <= 1) {
+System.out.println("Número inválido! Por favor, digite um número inteiro positivo maior que 1.");
+  } else {
+     boolean ehPrimo = verificarPrimo(numero);
+       if (ehPrimo) {
+      System.out.println(numero + " é um número primo.");
+      } else {
+         System.out.println(numero + " não é um número primo.");
+      }
+  }
+      System.out.print("Deseja calcular outro fatorial? (s/n): ");
+      continuar = teclado.next().charAt(0);
+    }
+      teclado.close();
+  }
+    
+    public static boolean verificarPrimo(int numero) {
+      if (numero <= 1) {
+       return false;
+    }
+        for (int i = 2; i <= Math.sqrt(numero); i++) {
+          if (numero % i == 0) {
+            return false;
+    }
+        }
+        return true;
+    }
+}
