@@ -1,0 +1,20 @@
+import java.util.Scanner;
+public class Main {
+public static void main(String[] args) {
+Scanner teclado = new Scanner(System.in);
+
+System.out.println("Digite a nota da primeira prova: ");
+  double p1 = teclado.nextDouble();
+    System.out.println("Digite a nota da segunda prova: ");
+  double p2 = teclado.nextDouble();
+  System.out.println("Digite a nota da terceira prova: ");
+  double p3 = teclado.nextDouble();
+  System.out.println("Digite a nota da quarta prova: ");
+  double p4 = teclado.nextDouble();
+  System.out.println("Digite a nota da quinta prova: ");
+  double p5 = teclado.nextDouble();
+    System.out.println("A média das notas é: " + (p1+p2+p3+p4+p5) / 5 );
+
+  teclado.close();
+  }
+}
