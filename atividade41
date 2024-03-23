@@ -1,0 +1,24 @@
+import java.util.Scanner;
+public class Main {
+public static void main(String[] args) {
+Scanner teclado = new Scanner(System.in);
+ 
+  System.out.print("Digite o valor da dívida: ");
+   double valorDivida = teclado.nextDouble();
+    System.out.print("Digite a taxa de juros mensal (em percentual): ");
+     double taxaJuros = teclado.nextDouble() / 100;
+      System.out.print("Digite a quantidade de parcelas: ");
+       int quantidadeParcelas = teclado.nextInt();
+
+  double valorJuros = valorDivida * taxaJuros;
+  double valorParcela = (valorDivida + valorJuros) / quantidadeParcelas;
+
+   System.out.println("Valor da Dívida\tValor dos Juros\tQuantidade de Parcelas\tValor da Parcela");
+    for (int i = 1; i <= quantidadeParcelas; i++) {
+     System.out.printf("%.2f\t\t%.2f\t\t%d\t\t\t%.2f\n", valorDivida, valorJuros, i, valorParcela);
+    valorDivida -= valorParcela;
+    valorJuros = valorDivida * taxaJuros;
+        }
+teclado.close();
+    }
+}
