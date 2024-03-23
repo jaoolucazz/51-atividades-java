@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class Main {
+public static void main(String[] args) {
+Scanner teclado = new Scanner(System.in);
+      
+  System.out.print("Digite um número inteiro N: ");
+   int N = teclado.nextInt();
+     int count = 0; 
+  System.out.println("Números primos entre 1 e " + N + ":");
+   for (int i = 2; i <= N; i++) {
+     if (ehPrimo(i)) {
+      System.out.print(i + " ");
+   }
+  count++;
+  }
+   System.out.println("\nNúmero total de divisões executadas: " + count);
+    }
+
+  public static boolean ehPrimo(int num) {
+   if (num <= 1) {
+    return false;
+  }
+    for (int i = 2; i <= Math.sqrt(num); i++) {
+     if (num % i == 0) {
+       return false;
+  }
+    }
+        return true;
+    }
+}
