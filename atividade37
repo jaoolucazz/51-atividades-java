@@ -1,0 +1,63 @@
+import java.util.Scanner;
+public class Main {
+public static void main(String[] args) {
+Scanner teclado = new Scanner(System.in);
+
+      int codigo;
+      double altura, peso;
+      int codigoMaisAlto = 0, codigoMaisBaixo = 0, codigoMaisGordo = 0, codigoMaisMagro = 0;
+      double alturaMaisAlto = Double.MIN_VALUE, alturaMaisBaixo = Double.MAX_VALUE;
+      double pesoMaisGordo = Double.MIN_VALUE, pesoMaisMagro = Double.MAX_VALUE;
+      double somaAlturas = 0, somaPesos = 0;
+      int numClientes = 0;
+
+  while (true) {
+    System.out.print("Código do cliente:(ou 0 para encerrar):");
+      codigo = teclado.nextInt();
+
+  if (codigo == 0) {
+   break;
+  }
+
+    System.out.print("Altura (em metros): ");
+    altura = teclado.nextDouble();
+     System.out.print("Peso (em quilogramas): ");
+      peso = teclado.nextDouble();
+
+    if (altura > alturaMaisAlto) {
+      alturaMaisAlto = altura;
+        codigoMaisAlto = codigo;
+  }
+    if (altura < alturaMaisBaixo) {
+      alturaMaisBaixo = altura;
+        codigoMaisBaixo = codigo;
+  }
+    if (peso > pesoMaisGordo) {
+      pesoMaisGordo = peso;
+        codigoMaisGordo = codigo;
+  }
+    if (peso < pesoMaisMagro) {
+      pesoMaisMagro = peso;
+        codigoMaisMagro = codigo;
+  }
+
+    somaAlturas += altura;
+    somaPesos += peso;
+    numClientes++;
+ }
+    
+    double mediaAlturas = somaAlturas / numClientes;
+    double mediaPesos = somaPesos / numClientes;
+
+   System.out.println("Cliente mais alto:");
+    System.out.println("Código: " + codigoMaisAlto + ", Altura: " + alturaMaisAlto + " metros");
+     System.out.println("Cliente mais baixo:");
+      System.out.println("Código: " + codigoMaisBaixo + ", Altura: " + alturaMaisBaixo + " metros");
+        System.out.println("Cliente mais gordo:");
+         System.out.println("Código: " + codigoMaisGordo + ", Peso: " + pesoMaisGordo + " quilogramas");
+          System.out.println("Cliente mais magro:");
+           System.out.println("Código: " + codigoMaisMagro + ", Peso: " + pesoMaisMagro + " quilogramas");
+            System.out.println("Média de alturas dos clientes: " + mediaAlturas + " metros");
+             System.out.println("Média de pesos dos clientes: " + mediaPesos + " quilogramas");
+    }
+}
