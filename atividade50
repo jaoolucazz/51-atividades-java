@@ -1,0 +1,20 @@
+import java.util.Scanner;
+public class Main {
+public static void main(String[] args) {
+Scanner teclado = new Scanner(System.in);
+
+  System.out.print("Digite o número de termos da série (N): ");
+    int N = teclado.nextInt();
+      double soma = 0;
+
+  System.out.print("H = ");
+    for (int i = 1; i <= N; i++) {
+      if (i > 1) {
+        System.out.print(" + ");
+            }
+  soma += 1.0 / i;
+    System.out.print("1/" + i);
+        }
+  System.out.println("\nValor de H com " + N + " termos: " + soma);
+    }
+}
