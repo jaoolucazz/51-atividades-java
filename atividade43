@@ -1,0 +1,43 @@
+import java.util.Scanner;
+public class Main {
+public static void main(String[] args) {
+Scanner teclado = new Scanner(System.in);
+
+  double total = 0;
+ System.out.println("Digite o codigo do item e a quantidade desejada (digite 0 para finalizar):");
+
+  while (true){
+    System.out.println("Codigo do item: ");
+    int codigo = teclado.nextInt();
+    System.out.println("Quantidade: ");
+    int quantidade = teclado.nextInt();
+
+  if (codigo == 0 && quantidade == 0){
+    break;
+  }
+
+    double preco = calcularPreco(codigo);
+    if (preco != -1){
+      double valor = preco * quantidade;
+      total += valor;
+      System.out.println("Valor a ser pago pelo item: R$" + valor);
+    } else {
+      System.out.println("Codigo invalido!");
+    }
+  }
+  System.out.println("Valor total a ser pago: R$" + total);
+  teclado.close();
+}
+  public static double calcularPreco(int codigo) {
+   switch (codigo) {
+    case 1:
+      return 10.0;
+        case 2:
+          return 20.0;
+            case 3:
+              return 30.0;
+        default:
+          return -1; 
+      }
+  }
+}
