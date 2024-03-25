@@ -1,0 +1,42 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
+public class Main {
+public static void main(String[] args) {
+Scanner teclado = new Scanner(System.in);
+
+  List<Double> notas = new ArrayList<>();
+   while (true) {
+    System.out.print("Nome do ginasta (Digite 0 para encerrar): ");
+     String nomeGinasta = teclado.nextLine();
+      if (nomeGinasta.equals("0")) {
+       break;
+            }
+
+  System.out.println("Digite as notas dos sete jurados para o ginasta " + nomeGinasta + ":");
+    for (int i = 0; i < 7; i++) {
+      System.out.print("Nota do jurado " + (i + 1) + ": ");
+        notas.add(teclado.nextDouble());
+            }
+  teclado.nextLine(); 
+    double media = calcularMedia(notas);
+      System.out.println("Média das notas do ginasta " + nomeGinasta + ": " + media);
+
+        notas.clear();
+        }
+    }
+  public static double calcularMedia(List<Double> notas) {
+    if (notas.size() < 3) {
+      return 0; 
+        }
+  Collections.sort(notas);
+   notas.remove(0); 
+    notas.remove(notas.size() - 1); 
+     double soma = 0;
+      for (double nota : notas) {
+       soma += nota;
+        }
+        return soma / notas.size();
+    }
+}
