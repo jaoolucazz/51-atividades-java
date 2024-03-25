@@ -1,0 +1,26 @@
+import java.util.Scanner;
+public class Main {
+public static void main(String[] args) {
+Scanner teclado = new Scanner(System.in);
+
+  System.out.print("Digite o número de termos da série: ");
+    int n = teclado.nextInt();
+     double soma = 0;
+      int numerador = 1;
+        int denominador = 1;
+
+  System.out.print("Série: ");
+    for (int i = 1; i <= n; i++) {
+      if (i > 1) {
+        System.out.print(" + ");
+            }
+  soma += (double) numerador / denominador;
+    System.out.print(numerador + "/" + denominador);
+      numerador++;
+        denominador += 2;
+        }
+  System.out.println("\nSoma dos termos da série: " + soma);
+  
+   teclado.close();
+    }
+}
