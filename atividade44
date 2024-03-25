@@ -1,0 +1,50 @@
+import java.util.Scanner;
+public class Main {
+public static void main(String[] args) {
+Scanner teclado = new Scanner(System.in);
+
+  int totalVcandidato1 = 0;
+  int totalVcandidato2 = 0;
+  int totalVnulos = 0;
+  int totalVbranco = 0;
+  int totalVotos = 0;
+
+  System.out.println("Digite o numero correspondeten ao voto 1 para candidato 1, voto 2 para canditado 2, voto 3 para nulo e voto 4 para branco:");
+  System.out.println("Digite 0 para encerrar a votação");
+  while (true){
+    int voto =  teclado.nextInt();
+    if (voto == 0){
+      break;
+    }
+
+    switch (voto){
+      case 1:
+        totalVcandidato1++;
+        break;
+      case 2:
+        totalVcandidato2++;
+        break;
+      case 3:
+        totalVnulos++;
+        break;
+      case 4:
+        totalVbranco++;
+        break;
+      default:
+        System.out.println("Voto inválido.");
+    }
+       totalVotos++;
+  }
+System.out.println("Total de votos para candidato 1: " + totalVcandidato1);
+  System.out.println("Total de votos para candidato 2: " + totalVcandidato2);
+  System.out.println("Total de votos nulos: " + totalVnulos);
+  System.out.println("Total de votos em branco: " + totalVbranco);
+
+ double percentagemNulos = (double) totalVnulos / totalVotos * 100;
+  double percentagemBrancos = (double) totalVbranco / totalVotos * 100;
+
+  System.out.println("Percentual de votos nulos: " +   percentagemNulos + "%");
+  System.out.println("Percentual de votos em branco: " + percentagemBrancos + "%");
+  teclado.close();
+}
+}
