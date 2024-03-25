@@ -1,0 +1,90 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+public class Main {
+public static void main(String[] args) {
+Scanner teclado = new Scanner(System.in);
+      
+    System.out.println("Digite o gabarito da prova (A, B, C ou D) para as 10 questões:");
+     char[] gabarito = new char[10];
+       for (int i = 0; i < 10; i++) {
+        System.out.print("Questão " + (i + 1) + ": ");
+         gabarito[i] = teclado.next().toUpperCase().charAt(0);
+        }
+
+    int maiorAcerto = 0, menorAcerto = 10;
+     int totalAlunos = 0;
+
+    while (true) {
+     char[] respostas = new char[10];
+      int acertos = 0;
+
+     System.out.println("\nDigite suas respostas para as 10 questões (A, B, C ou D):");
+      for (int i = 0; i < 10; i++) {
+       System.out.print("Questão " + (i + 1) + ": ");
+        respostas[i] = scanner.next().toUpperCase().charAt(0);
+            }
+
+    for (int i = 0; i < 10; i++) {
+     if (respostas[i] == gabarito[i]) {
+      acertos++;
+                }
+            }
+
+    if (acertos > maiorAcerto) {
+     maiorAcerto = acertos;
+            }
+    if (acertos < menorAcerto) {
+     menorAcerto = acertos;
+            }
+    totalAlunos++;
+
+            
+    System.out.print("\nDeseja permitir que outro aluno utilize o sistema? (S/N): ");
+     char opcao = teclado.next().toUpperCase().charAt(0);
+       if (opcao != 'S') {
+        break;
+            }
+        }
+    System.out.println("\nResultados:");
+     System.out.println("Maior Acerto: " + maiorAcerto);
+      System.out.println("Menor Acerto: " + menorAcerto);
+       System.out.println("Total de Alunos: " + totalAlunos);
+        System.out.println("\n\nCalculadora de média de saltos:");
+
+        List<Double> saltos = new ArrayList<>();
+        String nomeAtleta;
+
+       
+        while (true) {
+         System.out.print("Nome do atleta: ");
+          nomeAtleta = teclado.next();
+           if (nomeAtleta.equals("0")) {
+             break; 
+            }
+       
+          System.out.println("Digite as cinco distâncias alcançadas nos saltos do atleta " + nomeAtleta + ":");
+           for (int i = 0; i < 5; i++) {
+             System.out.print("Salto " + (i + 1) + ": ");
+              saltos.add(teclado.nextDouble());
+            }
+
+          double menorSalto = Double.MAX_VALUE;
+           double maiorSalto = Double.MIN_VALUE;
+            double soma = 0;
+          for (Double salto : saltos) {
+           soma += salto;
+            if (salto < menorSalto) {
+              menorSalto = salto;
+                }
+          if (salto > maiorSalto) {
+           maiorSalto = salto;
+                }
+            }
+            double media = (soma - menorSalto - maiorSalto) / 3.0;
+            System.out.println("Média dos saltos do atleta " + nomeAtleta + ": " + media);
+
+         saltos.clear();
+        }
+    }
+}
