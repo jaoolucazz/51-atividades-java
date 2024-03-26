@@ -4,7 +4,7 @@ public static void main(String[] args) {
   Scanner teclado = new Scanner(System.in);
 
   System.out.print("Digite uma nota de 0 a 10:");
-  int nota = teclado.nextInt();
+  double nota = teclado.nextDouble();
 
   if (nota <= 10){
     System.out.println("Nota valida" );
